@@ -1,17 +1,27 @@
 import './App.css';
 // useSelector - lay du lieu tu redux
 // useDispatch - mang cac actions toi cho redux
-import { useSelector, useDispatch } from 'react-redux/es/exports';
+// import { useSelector, useDispatch } from 'react-redux';
 import { ToastContainer } from 'react-toastify'
-  import 'react-toastify/dist/ReactToastify.css'
+import 'react-toastify/dist/ReactToastify.css'
+import {Routes, Route} from 'react-router-dom'
+import Layout from './pages/public/Layout';
+import Home from './pages/public/Home';
+import Contact from './pages/public/Contact';
+import PageNotFound from './pages/public/PageNotFound';
+import paths from './ultils/paths';
 
 function App() {
-  const {test} = useSelector(state => state.app);
-console.log(test);
   return (
     <>
         <div className="App">
-                  <h1 className="text-3xl font-bold underline">Hello World!</h1>
+                <Routes>
+                  <Route path={paths.LAYOUT} element={<Layout />}>
+                    <Route path={paths.HOME} element={<Home />} />
+                    <Route path={paths.CONTACT} element={<Contact />} />
+                  </Route>
+                  <Route path={paths.PAGENOTFOUND} element={<PageNotFound />} />
+                </Routes>
                 </div>
                 <ToastContainer
                 position="top-right"
