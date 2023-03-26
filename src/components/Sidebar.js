@@ -11,7 +11,7 @@ const ActiveStyle =
 
 const Sidebar = () => {
     return (
-        <div className="sidebar-container h-[calc(100vh_-_var(--player-height))] bg-bg-color overflow-hidden relative">
+        <div className="sidebar-container h-[calc(100vh_-_var(--player-height))] bg-main-200 overflow-hidden relative">
             <div className="sidebar-logo w-full h-[70px] pl-7 pr-[25px] py-[15px] flex items-center">
                 <img
                     src={logo}

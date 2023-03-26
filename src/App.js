@@ -9,8 +9,17 @@ import Layout from "./pages/public/Layout";
 import Home from "./pages/public/Home";
 import Contact from "./pages/public/Contact";
 import paths from "./ultils/paths";
+import * as actions from "./store/actions";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 
 function App() {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(actions.getHome());
+    }, []);
+
     return (
         <>
             <div className="App">
